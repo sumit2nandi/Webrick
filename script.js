@@ -19,38 +19,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 document.querySelectorAll('[data-service]').forEach(card => {
   card.addEventListener('click', () => { document.getElementById('service-select').value = card.dataset.service; });
 });
-const projects = {
-  forma: {
-    title: 'Forma Studio',
-    description: 'A bold, expressive website concept for an independent creative studio. Playful shapes, confident typography, and a clear story make space for the work to shine. Designed to feel just as considered on a phone as on a desktop.',
-    tags: ['Brand-led design', 'Responsive development', 'Portfolio experience']
-  },
-  nook: {
-    title: 'Nook Living',
-    description: 'A warm, thoughtfully minimal e-commerce concept for everyday objects. An editorial approach to product discovery, natural colors, and an uncluttered shopping journey bring the brand’s less-but-better philosophy to life.',
-    tags: ['E-commerce', 'Product discovery', 'Responsive design']
-  }
-};
-const dialog = document.getElementById('project-dialog');
-document.querySelectorAll('[data-project]').forEach(card => {
-  card.addEventListener('click', () => {
-    const project = projects[card.dataset.project];
-    document.getElementById('dialog-title').textContent = project.title;
-    document.getElementById('dialog-description').textContent = project.description;
-    const tags = document.getElementById('dialog-tags');
-    tags.replaceChildren(...project.tags.map(text => { const tag = document.createElement('span'); tag.textContent = text; return tag; }));
-    dialog.showModal();
-  });
-});
-document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => {
-  const bounds = dialog.getBoundingClientRect();
-  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-});
-document.getElementById('dialog-cta').addEventListener('click', () => {
-  dialog.close();
-  document.getElementById('service-select').value = 'Website design & development';
-});
 // Static-site contact: opens a draft, and never claims the message was sent.
 // Replace the destination below with your verified business inbox before publishing.
 const contactEmail = 'hello@webricktechnologies.com';
