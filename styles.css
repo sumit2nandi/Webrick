@@ -21,13 +21,13 @@
   height: 60px;
   border: 2px solid #fff;
   border-radius: 50%;
-  background: #128c4a;
+  background: #25d366;
   color: #fff;
   box-shadow: 0 5px 20px #152e2c30;
   transition: transform .2s, background .2s, box-shadow .2s;
 }
 .whatsapp-chat:hover {
-  background: #0d713b;
+  background: #1ebe5d;
   transform: translateY(-3px);
   box-shadow: 0 8px 24px #152e2c40;
 }
